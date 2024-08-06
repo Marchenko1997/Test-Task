@@ -1,0 +1,42 @@
+/* AdCard.module.css */
+.adCard {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .camperImage img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .camperDetails {
+    margin-left: 15px;
+  }
+  
+  .camperName {
+    color: #101828;
+  }
+  
+  .camperPrice {
+    color: #F54460;
+  }
+  
+  .favoriteButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .showMoreButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
