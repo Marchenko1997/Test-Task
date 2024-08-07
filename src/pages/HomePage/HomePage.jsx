@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const HomePage = () => {
   return (
     <div className={css.wrapperHome}>
@@ -16,7 +17,9 @@ const HomePage = () => {
         <button type="button" className={css.buttonHome}>
           <Link to="/catalog">Dive in</Link>
         </button>
+   
         </div>
+       
       </section>
     </div>
   )

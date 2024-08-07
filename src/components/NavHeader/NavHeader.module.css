@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    border-top: 3px solid var(--accent-second-color);
+    border-bottom: 3px solid var(--accent-second-color);
+    background-color: var(--second-color);
+    align-items: center;
+    height: 50px;
+    justify-content: flex-end;
+    padding: 12px;
+}
+  .headNavigation{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 40px;
+    margin-right: 40px;
+  }
+
+
+  .iconCamper {
+    width: 26px;
+  height: 26px;
+ 
+  }
+
+  .navLink { 
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    display: flex;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: var(--main-color);
+    background-color: var(--background-inputs);
+   
+    border-radius: 200px;
+    transition: var(--anim);
+  }
+  
+  .navLink:hover,
+  .navLink:focus,
+  .navLink:active {
+    color: var(--main-white);
+    background-color: var(--second-color);
+    border: 1px solid var(--main-color);
+    padding: 10px 16px;
+  }
+  
+  .active {
+    color: var(--accent-second-color);
+  background-color: var(--main-white);
+  border: none;
+  transition: var(--anim);
+  padding: 12px 18px;
+  border: 1px solid var(--main-color);
+  }
+
+  
