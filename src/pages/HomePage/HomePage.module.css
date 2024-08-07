@@ -1,0 +1,57 @@
+.sectionHome {
+  background-image: url("../../assets/mainpicture.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(152, 152, 186);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 100px 64px;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--background-inputs);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 400px;
+  margin-right: auto;
+  align-items: flex-start;
+}
+
+.mainTitle {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--accent-second-color);
+}
+
+.description {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--main-color);
+  text-shadow: 2px 2px 4px rgba(234, 178, 196, 0.5);
+}
+
+.buttonHome {
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+
+  font-size: 36px;
+  padding: 12px 24px;
+  color: var(--accent-second-color);
+  transition: var(--trans);
+
+  border-radius: 200px;
+  font-weight: 700;
+}
+
+.buttonHome:hover,
+.buttonHome:focus,
+.buttonHome:active {
+  color: var(--main-color);
+  background-color: var(--accent-color);
+}
