@@ -1,21 +1,31 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-export const favoriteSlice = createSlice({
-    name: "favorite",
-    initialState: {
-        favorites : [],
-    },
-    reducers: {
-        addToFavorites: (state, action) => {
-            state.favorites.push(action.payload); 
-        },
+const initialState = {
+  favorites: [],
+};
 
-        removeFromFavorites: (state, action) => {
-            state.favorites = state.favorites.filter (id => id !== action.payload);
-        },
+const favoritesSlice = createSlice({
+  name: 'favorites',
+  initialState,
+  reducers: {
+    addFavorite: (state, action) => {
+      const camper = action.payload;
+      const exists = state.favorites.some(item => item._id === camper._id);
+      if (!exists) {
+        state.favorites.push(camper);
+      }
     },
+    removeFavorite: (state, action) => {
+      const camperId = action.payload;
+      state.favorites = state.favorites.filter(
+        camper => camper._id !== camperId
+      );
+    },
+  },
 });
 
-export const { addToFavorites, removeFromFavorites} = favoriteSlice.actions;
+// Экспортируем действия, созданные слайсом
+export const { addFavorites, removeFavorites } = favoritesSlice.actions;
 
-export default favoriteSlice.reducer;
+// Экспортируем редьюсер для подключения к хранилищу Redux
+export default favoritesSlice.reducer;

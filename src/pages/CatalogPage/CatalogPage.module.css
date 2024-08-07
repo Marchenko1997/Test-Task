@@ -1,0 +1,9 @@
+.sectionCatalog {
+    display: flex;
+    width: 1440px;
+    gap: 64px;
+    padding: 100px 64px;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: auto;
+}
