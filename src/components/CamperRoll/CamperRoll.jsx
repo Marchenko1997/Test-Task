@@ -10,8 +10,8 @@ const CamperRoll = ({ ads = [] }) => {
   };
 
   const renderCards = () => {
-    return ads.slice(0, activeCard).map((camper) => (
-      <li className={css.camperItem} key={camper._id}>
+    return ads.slice(0, activeCard).map((camper, index) => (
+      <li className={css.camperItem} key={camper._id || index}>
         <CamperUnit camper={camper} />
       </li>
     ));

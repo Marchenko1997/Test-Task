@@ -1,12 +1,11 @@
 .camperImg {
+  max-width: 100%;
+
   background-color: var(--background-features);
   object-fit: cover;
   overflow: hidden;
   border-radius: 10px;
-    max-width: 100%;
-    width: 290px;
-    height: 310px;
-
+  background-color: var(--background-features);
 }
 
 .camperInfo {
@@ -15,11 +14,12 @@
   gap: 24px;
   width: 526px;
   height: 310px;
+  width: 100%;
 }
 
 .title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   gap: 12px;
   font-weight: 600;
@@ -28,6 +28,18 @@
   color: var(--main-color);
   margin-bottom: 8px;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items: baseline;
+}
+
+.addFavContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: auto;
 }
 
 .addToFavorite {
@@ -48,11 +60,16 @@
 }
 
 .iconHeart {
- 
+  width: 24px;
+  height: 24px;
 }
 
 .iconHeartPressed {
-
+  width: 24px;
+  height: 24px;
+  fill: var(--accent-color);
+  stroke: var(--accent-color);
+  transition: var(--anim);
 }
 
 .camperAddInfo {
@@ -64,9 +81,36 @@
   color: var(--main-color);
 }
 
-.iconRating,
+.iconRating {
+  width: 16px;
+  height: 16px;
+  fill: var(--add-color);
+  stroke: var(--add-color);
+  margin-right: 4px;
+}
+
+.camperRating,
+.camperReviews {
+  text-decoration: underline;
+}
+
 .iconMap {
- 
+  width: 16px;
+  height: 16px;
+  stroke: var(--main-color);
+  fill: none;
+  margin-left: 16px;
+  margin-right: 4px;
+}
+
+.camperDescription {
+  width: 525px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--second-color);
 }
 
 .showMore {
