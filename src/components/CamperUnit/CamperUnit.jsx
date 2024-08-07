@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Icon from "../Icon/Icon";
 import CamperModal from "../CamperModal/CamperModal";
-import { addFavorites, removeFavorites } from "../../redux/favorive/slice";
+import { addFavorite, removeFavorite } from "../../redux/favorive/slice";
 import { selectFavorites } from "../../redux/favorive/selectors";
 import PropTypes from 'prop-types';
 import { useModalContext } from "../../context/useModalContext";
@@ -21,19 +21,19 @@ const CamperUnit = ({ camper }) => {
   }, [favorites, camper._id]);
 
   const handleToggleFav = useCallback(() => {
-    dispatch(isFavorite ? removeFavorites(camper._id) : addFavorites(camper));
+    dispatch(isFavorite ? removeFavorite(camper._id) : addFavorite(camper));
     setIsFavorite((prev) => !prev);
   }, [dispatch, camper, isFavorite]);
 
   return (
     <>
       {/* Изображение кемпера */}
-      <img src={camper.gallery[0]} alt={camper.name} className={css.camperImage} />
+      <img src={camper.gallery[0]} alt={camper.name} className={css.camperImg} />
       <div className={css.camperInfo}>
         {/* Основная информация о кемпере */}
-        <div className={css.camperTitle}>
+        <div className={css.title}>
           <h3>{camper.name}</h3>
-          <div className={css.camperTop}>
+          <div className={css.camperInfo}>
             <span>&#8364;{camper.price.toFixed(2)}</span> {/* Цена кемпера */}
             <button onClick={handleToggleFav} className={css.addToFavorite}>
               <Icon iconName="heart" className={isFavorite ? css.iconHeartPressed : css.iconHeart} />

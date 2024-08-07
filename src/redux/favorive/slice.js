@@ -25,7 +25,7 @@ const favoritesSlice = createSlice({
 });
 
 // Экспортируем действия, созданные слайсом
-export const { addFavorites, removeFavorites } = favoritesSlice.actions;
+export const { addFavorite, removeFavorite } = favoritesSlice.actions;
 
 // Экспортируем редьюсер для подключения к хранилищу Redux
 export default favoritesSlice.reducer;

@@ -3,7 +3,7 @@ import CamperUnit from "../CamperUnit/CamperUnit";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-const CamperRoll = ({ ads }) => {
+const CamperRoll = ({ ads = [] }) => {
   const [activeCard, setActiveCard] = useState(4);
   const loadMoreCards = () => {
     setActiveCard((prevCount) => prevCount + 4);
@@ -19,8 +19,8 @@ const CamperRoll = ({ ads }) => {
 
   return (
     <div className={css.cardsContainer}>
-      {/* <ul className={css.cardsList}>{renderCards()}</ul> */}
-      {/* {activeCard < ads.length && (
+      <ul className={css.cardsList}>{renderCards()}</ul>
+      {activeCard < ads.length && (
         <button
           type="button"
           className={css.loadMoreButton}
@@ -28,17 +28,17 @@ const CamperRoll = ({ ads }) => {
         >
           Load more
         </button>
-      )} */}
+      )}
     </div>
   );
 };
 
-// CamperRoll.propTypes = {
-//   ads: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       _id: PropTypes.string.isRequired,
-//     })
-//   ).isRequired,
-// };
+CamperRoll.propTypes = {
+  ads: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired, // Убедитесь, что вы используете правильное имя ключа
+    })
+  ).isRequired,
+};
 
 export default CamperRoll;

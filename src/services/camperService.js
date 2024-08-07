@@ -6,8 +6,9 @@ const instance = axios.create({
 });
 
 const getCampersRequest = async () => {
-  const { data } = await instance.get('/ads');
-  return data;
+  const { data } = await instance.get('/Campers');
+  const campers = Object.values(data[0]);
+  return campers;
 };
 
 export { getCampersRequest };
