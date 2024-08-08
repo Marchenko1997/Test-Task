@@ -2,7 +2,7 @@
   background-image: url("../../assets/mainpicture.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgb(152, 152, 186);
+  background-color: var(--accent-color);
   display: flex;
   flex-direction: column;
   width: 100%;
