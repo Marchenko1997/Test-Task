@@ -72,8 +72,11 @@ const CamperDetails = ({ camper }) => {
           <BookForm />
         </TabContent>
         <TabContent tabName="Reviews">
-          <Reviews reviews={camper.reviews} />
-       
+          {camper.reviews && camper.reviews.length > 0 ? (
+            <Reviews feedbacks={camper.reviews} />
+          ) : (
+            <p>No reviews available.</p>
+          )}
         </TabContent>
       </div>
     </div>
