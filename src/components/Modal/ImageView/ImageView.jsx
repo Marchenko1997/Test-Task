@@ -20,13 +20,13 @@ function ImageView({ images, imageIndex = 0 }) {
   return (
     <div className={css.imageView}>
       <div className={css.back} onClick={() => navigateImage('prev')}>
-        <Icon width={20} height={60} nameIcon="arrowLeft" styles={css.icon} />
+        <Icon width={20} height={60} nameIcon="arrowLeft" className={css.icon} />
       </div>
       <div className={css.imageContainer}>
         <img src={images[currentImage]} alt="Displayed" className={css.image} />
       </div>
       <div className={css.next} onClick={() => navigateImage('next')}>
-        <Icon width={46} height={46} nameIcon="arrowRight" styles={css.icon} />
+        <Icon width={46} height={46} nameIcon="arrowRight" className={css.icon} />
       </div>
     </div>
   );

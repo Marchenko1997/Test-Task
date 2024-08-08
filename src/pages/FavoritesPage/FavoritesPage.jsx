@@ -12,7 +12,7 @@ const FavoritesPage = () => {
     <>
       <HomeTitle>Favorites</HomeTitle>
       <section className={css.favoritesContainer}>
-        <h2 className={css.favoritesTitle}>Favorites</h2>
+        <h2 className={css.favoritesTitle}>Saved Campers</h2>
         {favorites.length > 0 && (
           <p className={css.favoritesDescription}>
             Here you can view all the campers you've marked as favorites.

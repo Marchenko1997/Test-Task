@@ -135,11 +135,11 @@
 .tabButtons::before {
   content: '';
   position: absolute;
-  bottom: -24px;
+  bottom: -19px;
   right: 0px;
   transform: translateY(-50%);
   display: block;
-  width: 902px;
+  width: 962px;
   height: 1px;
   background-color: rgba(16, 24, 40, 0.2);
 }
@@ -180,7 +180,7 @@
 }
 
 .tabContent {
-  width: 902px;
+  width: 962px;
   display: flex;
   flex-direction: row;
   gap: 24px;
