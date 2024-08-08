@@ -1,0 +1,49 @@
+.modalData {
+    position: relative;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 47, 47, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.modalOpen {
+    overflow: hidden;
+  }
+
+  .modalCloseButton {
+    z-index: 150;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    transition: var(--anim);
+  }
+  
+  .modalCloseButton:focus-visible .iconCross,
+  .modalCloseButton:active .iconCross {
+    stroke: var(--accent-color);
+    fill: var(--accent-color);
+  }
+
+.iconCross {
+    width: 32px;
+    height: 32px;
+}

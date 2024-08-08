@@ -2,11 +2,12 @@ import css from "./CamperUnit.module.css";
 import { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Icon from "../Icon/Icon";
-import CamperModal from "../CamperModal/CamperModal";
+import CamperDetails from "../Modal/CamperDetails/CamperDetails";
 import { addFavorite, removeFavorite } from "../../redux/favorive/slice";
 import { selectFavorites } from "../../redux/favorive/selectors";
 import PropTypes from "prop-types";
 import { useModalContext } from "../../context/useModalContext";
+
 
 const CamperUnit = ({ camper }) => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const CamperUnit = ({ camper }) => {
           <div className={css.addFavContainer}>
             <span>&#8364;{camper.price.toFixed(2)}</span>
             <button onClick={handleToggleFav} className={css.addToFavorite}>
-              <Icon nameIcon="icon-heart" className={isFavorite ? css.iconHeartPressed : css.iconHeart} />
+              <Icon nameIcon="heart" className={isFavorite ? css.iconHeartPressed : css.iconHeart} />
             </button>
           </div>
         </div>
@@ -45,7 +46,7 @@ const CamperUnit = ({ camper }) => {
           <p>{camper.location}</p>
         </div>
         <p className={css.camperDescription}>{camper.description}</p>
-        <button onClick={() => openModal('camper_modal', <CamperModal camper={camper} />)} className={css.showMore}>
+        <button onClick={() => openModal('camper_modal', <CamperDetails camper={camper} />)} className={css.showMore}>
           Show more
         </button>
       </div>

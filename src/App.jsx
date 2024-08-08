@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Layout';
+import ModalsNav from './components/Modal/ModalsNav/ModalsNav';
 
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
@@ -10,6 +11,7 @@ const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
 
 function App() {
   return (
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Layout />} >
@@ -20,6 +22,8 @@ function App() {
         </Route>
       </Routes>
     </Router>
+    <ModalsNav />
+    </>
   );
 }
 

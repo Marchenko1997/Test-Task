@@ -1,0 +1,50 @@
+.imageView {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 40px;
+    position: relative;
+  }
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 50px;
+  }
+  .image {
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+  }
+  .back,
+  .next {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .back {
+    left: 0;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  .next {
+    right: 0;
+    text-align: right;
+    justify-content: flex-end;
+  }
+  .icon {
+    width: 46px;
+    height: 46px;
+    fill: var(--color-text);
+    transition: all 0.25s ease-in-out;
+  }
+  .back:hover .icon,
+  .next:hover .icon {
+    fill: var(--color-btn);
+  }

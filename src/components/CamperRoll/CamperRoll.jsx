@@ -34,11 +34,11 @@ const CamperRoll = ({ ads = [] }) => {
 };
 
 CamperRoll.propTypes = {
-  ads: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired, // Убедитесь, что вы используете правильное имя ключа
-    })
-  ).isRequired,
+  ads: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default CamperRoll;

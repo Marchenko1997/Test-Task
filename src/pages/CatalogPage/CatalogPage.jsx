@@ -15,11 +15,13 @@ const CatalogPage = () => {
     dispatch(getCampers()); 
   }, [dispatch]);
 
+  const transformedAds = Object.values(ads).filter(ad => typeof ad === 'object' && ad._id);
+
 
   return (
     <div className={css.wrapper}>
       <section className={css.sectionCatalog}>
-        <CamperRoll ads={ads} />
+        <CamperRoll ads={transformedAds} />
       </section>
     </div>
   )
