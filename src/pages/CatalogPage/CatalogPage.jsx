@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import  {getCampers}  from '../../redux/camper/operations';
 import { useEffect } from 'react';
 import { selectCampers } from '../../redux/ads/selector';
+import HomeTitle from '../../components/HomeTitle/HomeTitle';
 
 
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  const ads = useSelector(selectCampers);
+  const ads = useSelector(selectCampers) || {};
 
   useEffect(() => {
     dispatch(getCampers()); 
@@ -17,13 +18,20 @@ const CatalogPage = () => {
 
   const transformedAds = Object.values(ads).filter(ad => typeof ad === 'object' && ad._id);
 
+  if (Object.keys(ads).length === 0) {
+    return <p>Loading campers...</p>; // Или добавьте более сложный индикатор загрузки
+  }
+
 
   return (
+    <>
+    <HomeTitle>Camper Catalog</HomeTitle>
     <div className={css.wrapper}>
       <section className={css.sectionCatalog}>
         <CamperRoll ads={transformedAds} />
       </section>
     </div>
+    </>
   )
 }
 

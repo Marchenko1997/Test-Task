@@ -1,15 +1,16 @@
-import { useState } from 'react';
-import { useModalContext } from '../../../context/useModalContext';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import { useModalContext } from "../../../context/useModalContext";
+import PropTypes from "prop-types";
 import css from "./CamperDetails.module.css";
 import ImageView from "../ImageView/ImageView";
-import BookForm from '../BookForm/BookForm';
-import Reviews from '../Reviews/Reviews';
-import Features from '../Features/Features';
+import BookForm from '../BookForm/BookForm'
+import Reviews from "../Reviews/Reviews";
+import BenefitsList from "../Features/BenefitsList/BenefitsList";
 import Icon from "../../Icon/Icon";
+import VehicleTable from "../Features/VehicleTable/VehicleTable";
 
 const CamperDetails = ({ camper }) => {
-  const [selectedTab, setSelectedTab] = useState('Features');
+  const [selectedTab, setSelectedTab] = useState("Features");
   const { openModal } = useModalContext();
 
   const switchTab = (tabName) => {
@@ -18,7 +19,9 @@ const CamperDetails = ({ camper }) => {
   };
 
   const TabContent = ({ tabName, children }) => {
-    return selectedTab === tabName ? <div className={css.tabContent}>{children}</div> : null;
+    return selectedTab === tabName ? (
+      <div className={css.tabContent}>{children}</div>
+    ) : null;
   };
 
   TabContent.propTypes = {
@@ -33,7 +36,9 @@ const CamperDetails = ({ camper }) => {
         <div className={css.modalStats}>
           <Icon nameIcon="rating" className={css.ratingIcon} />
           <p className={css.ratingText}>{camper.rating}</p>
-          <p className={css.reviewCount}>&#x2768;{camper.reviews.length} Reviews&#x2769;</p>
+          <p className={css.reviewCount}>
+            &#x2768;{camper.reviews.length} Reviews&#x2769;
+          </p>
           <Icon nameIcon="location" className={css.locationIcon} />
           <p>{camper.location}</p>
         </div>
@@ -49,8 +54,13 @@ const CamperDetails = ({ camper }) => {
                 alt={camper.name}
                 className={css.camperImage}
                 onClick={() => {
-                  console.log(`Opening imageViewer modal with image index: ${idx}`);
-                  openModal('images_modal', <ImageView images={camper.gallery} imageIndex={idx} />);
+                  console.log(
+                    `Opening imageViewer modal with image index: ${idx}`
+                  );
+                  openModal(
+                    "images_modal",
+                    <ImageView images={camper.gallery} imageIndex={idx} />
+                  );
                 }}
               />
             </li>
@@ -58,26 +68,48 @@ const CamperDetails = ({ camper }) => {
         </ul>
         <p className={css.descriptionText}>{camper.description}</p>
         <div className={css.tabButtons}>
-          <button type="button" onClick={() => switchTab('Features')} className={selectedTab === 'Features' ? css.activeButton : css.tabButton}>
+          <button
+            type="button"
+            onClick={() => switchTab("Features")}
+            className={
+              selectedTab === "Features" ? css.activeButton : css.tabButton
+            }
+          >
             Features
           </button>
-          <button type="button" onClick={() => switchTab('Reviews')} className={selectedTab === 'Reviews' ? css.activeButton : css.tabButton}>
+          <button
+            type="button"
+            onClick={() => switchTab("Reviews")}
+            className={
+              selectedTab === "Reviews" ? css.activeButton : css.tabButton
+            }
+          >
             Reviews
           </button>
         </div>
-        <TabContent tabName="Features">
-          <Features camper={camper} />
-        
-         
-          <BookForm />
-        </TabContent>
+        <div className={css.featuresContainer}>
+          <TabContent tabName="Features">
+            <div className={css.benAndTable}>
+            <BenefitsList camper={camper} />
+            <h3 className={css.featuresTitle}>Vehicle details</h3>
+      
+              <VehicleTable camper={camper} />
+              </div>
+
+            <BookForm />
+          </TabContent>
+        </div>
+        <div className={css.reviewContainer}>
         <TabContent tabName="Reviews">
           {camper.reviews && camper.reviews.length > 0 ? (
             <Reviews feedbacks={camper.reviews} />
           ) : (
             <p>No reviews available.</p>
           )}
+          <BookForm/>
         </TabContent>
+        </div>
+        
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { addFavorite, removeFavorite } from "../../redux/favorive/slice";
 import { selectFavorites } from "../../redux/favorive/selectors";
 import PropTypes from "prop-types";
 import { useModalContext } from "../../context/useModalContext";
+import createCamperAdv from "../../utils/createCamperAdv";
 
 
 const CamperUnit = ({ camper }) => {
@@ -24,6 +25,8 @@ const CamperUnit = ({ camper }) => {
     dispatch(isFavorite ? removeFavorite(camper._id) : addFavorite(camper));
     setIsFavorite((prev) => !prev);
   }, [dispatch, camper, isFavorite]);
+
+  const camperPros = createCamperAdv(camper);
 
   return (
     <>
@@ -46,6 +49,24 @@ const CamperUnit = ({ camper }) => {
           <p>{camper.location}</p>
         </div>
         <p className={css.camperDescription}>{camper.description}</p>
+        <ul className={css.camperAdv}>
+          {camperPros.map(
+            ({ label, value, iconName }) =>
+              value && (
+                <li
+                  className={css.camperAdvItem}
+                  key={`${camper._id}-${iconName}`}
+                >
+                  <Icon
+                    className={css.iconCamperItems}
+                    nameIcon={iconName}
+                  />
+                  {value} {label}
+                </li>
+              )
+          )}
+        </ul>
+
         <button onClick={() => openModal('camper_modal', <CamperDetails camper={camper} />)} className={css.showMore}>
           Show more
         </button>

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 Modal.setAppElement('#root');
 
-const ModalWindow = ({ modalName, children }) => {
+const ModalWindow = ({ modalName }) => {
   const { isOpen, modalContent, closeModal } = useModalContext();
 
   console.log(`Rendering ModalWindow for ${modalName}: isOpen = ${isOpen[modalName]}`);

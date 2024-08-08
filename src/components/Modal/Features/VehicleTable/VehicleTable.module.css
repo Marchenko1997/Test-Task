@@ -1,0 +1,23 @@
+.vehicleContainer {
+  padding-right: 8px;
+}
+
+.vehicleTable {
+  min-width: 238px;
+  width: 430px; 
+  height: 214px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--main-color);
+  border-collapse: collapse;
+  padding-right: 24px;
+}
+
+.tableLeft {
+  text-align: left;
+}
+
+.tableRight {
+  text-align: right;
+}

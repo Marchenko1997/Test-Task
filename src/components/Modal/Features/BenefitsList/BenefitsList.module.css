@@ -1,0 +1,31 @@
+.benefitsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 44px;
+  width: 100%;
+  width: 430px;
+}
+
+.benefitsItem {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 44px;
+  background-color: var(--background-features);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--main-color);
+}
+
+.iconBenefits {
+  width: 20px;
+  height: 20px;
+}
