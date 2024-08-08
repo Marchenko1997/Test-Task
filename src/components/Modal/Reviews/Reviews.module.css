@@ -56,15 +56,15 @@
   .activeStar {
     width: 16px;
     height: 16px;
-    stroke: var(--icon-active-color);
-    fill: var(--icon-active-color);
+    stroke: var(--add-color);
+    fill: var(--add-color);
   }
   
   .inactiveStar {
     width: 16px;
     height: 16px;
-    stroke: var(--icon-inactive-color);
-    fill: var(--icon-inactive-color);
+    stroke: var(--background-features);
+    fill: var(--background-inputs);
   }
   
   .feedbackText {

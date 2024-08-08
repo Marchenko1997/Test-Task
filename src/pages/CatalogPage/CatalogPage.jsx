@@ -5,6 +5,7 @@ import  {getCampers}  from '../../redux/camper/operations';
 import { useEffect } from 'react';
 import { selectCampers } from '../../redux/ads/selector';
 import HomeTitle from '../../components/HomeTitle/HomeTitle';
+import FilterForm from '../../components/FilterForm/FilterForm';
 
 
 
@@ -28,6 +29,7 @@ const CatalogPage = () => {
     <HomeTitle>Camper Catalog</HomeTitle>
     <div className={css.wrapper}>
       <section className={css.sectionCatalog}>
+      <FilterForm />
         <CamperRoll ads={transformedAds} />
       </section>
     </div>

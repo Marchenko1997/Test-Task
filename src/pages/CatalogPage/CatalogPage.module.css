@@ -6,5 +6,5 @@
     flex-direction: row;
     align-items: flex-start;
     margin: auto;
-    justify-content: center; 
+    justify-content: space-around; 
 }

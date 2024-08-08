@@ -15,7 +15,7 @@
   width: 526px;
   height: fit-content;
   width: 100%;
-  overflow: visible;
+  overflow: visible ;
 }
 
 .title {
@@ -52,12 +52,12 @@
 
 .addToFavorite:hover .iconHeart {
   fill: transparent;
-  stroke: var(--accent-color);
+  stroke: var(--accent-previous-color);
 }
 
 .addToFavorite:hover .iconHeartPressed {
-  fill: var(--accent-color);
-  stroke: var(--second-color);
+  fill: var(--accent-previous-color);
+  stroke: var(--accent-third-color);
 }
 
 .iconHeart {
@@ -68,8 +68,8 @@
 .iconHeartPressed {
   width: 24px;
   height: 24px;
-  fill: var(--accent-color);
-  stroke: var(--accent-color);
+  fill: var(--accent-previous-color);
+  stroke: var(--accent-third-color);
   transition: var(--anim);
 }
 

@@ -1,0 +1,191 @@
+.searchForm {
+    min-width: 288px;
+    max-width: 375px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+  
+  .locationSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .textLabel {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(16, 24, 40, 0.6);
+  }
+  
+  .inputContainer {
+    position: relative;
+  }
+  
+  .cityInput {
+    border-radius: 10px;
+    padding: 12px 12px 12px 48px;
+    min-width: 288px;
+    max-width: 343px;
+    width: 100%;
+    height: 56px;
+    background-color: var(--background-inputs);
+    border: none;
+    position: relative;
+  }
+  
+  .cityInput:focus,
+  .cityInput:hover {
+    outline: transparent;
+  }
+  
+  .suggestionsList {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 12px;
+    min-width: 288px;
+    max-width: 375px;
+    width: 100%;
+    background-color: var(--background-inputs);
+    border-radius: 10px;
+  }
+  
+  .suggestionItem {
+    cursor: pointer;
+    color: rgba(16, 24, 40, 0.5);
+    padding: 8px 8px 8px 48px;
+    border: 1px solid var(--main-white);
+    border-radius: 15px;
+    transition: var(--anim);
+  }
+  
+  .suggestionItem:hover,
+  .suggestionItem:focus {
+    color: var(--main-color);
+  }
+  
+  .mapIconStyle {
+    width: 18px;
+    height: 20px;
+    stroke: rgba(16, 24, 40, 0.6);
+    fill: none;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    transition: var(--anim);
+    z-index: 5;
+  }
+  
+  .inputContainer:focus-within .mapIconStyle,
+  .inputContainer:hover .mapIconStyle {
+    stroke: var(--main-color);
+  }
+  
+  .equipmentSection {
+    margin-top: 14px;
+  }
+  
+  .equipmentTitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--main-color);
+    position: relative;
+  }
+  
+  .equipmentTitle::before {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    right: 0px;
+    transform: translateY(-50%);
+    display: block;
+    width: 360px;
+    height: 1px;
+    background-color: rgba(16, 24, 40, 0.1);
+  }
+  
+  .equipmentList {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .selectedEquipment {
+    width: 102px;
+    height: 95px;
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    padding: 0 17px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--anim);
+  }
+  
+  .selectedEquipment:hover,
+  .selectedEquipment:focus {
+    border: 1px solid var(--accent-color);
+  }
+  
+  .filterIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .camperIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .actionButton {
+    margin-top: 32px;
+    border-radius: 200px;
+    padding: 16px 60px;
+    width: 173px;
+    height: 56px;
+    background-color: var(--accent-color);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: var(--main-white);
+    border: none;
+    transition: var(--anim);
+  }
+  
+  .actionButton:active,
+  .actionButton:focus-visible {
+    background-color: var(--accent-second-color);
+  }
+  
+  .errorMessage {
+    position: absolute;
+    left: 8px;
+    bottom: -18px;
+    color: var(--accent-color);
+    font-size: 12px;
+  }
+  
+  .checkboxStyle,
+  .radioStyle {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
