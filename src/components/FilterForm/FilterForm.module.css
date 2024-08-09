@@ -1,4 +1,4 @@
-.searchForm {
+.filterForm {
     min-width: 288px;
     max-width: 375px;
     width: 100%;
@@ -25,7 +25,7 @@
     position: relative;
   }
   
-  .cityInput {
+  .textInput {
     border-radius: 10px;
     padding: 12px 12px 12px 48px;
     min-width: 288px;
@@ -34,15 +34,16 @@
     height: 56px;
     background-color: var(--background-inputs);
     border: none;
+    cursor: none;
     position: relative;
   }
   
-  .cityInput:focus,
-  .cityInput:hover {
+  .textInput:focus,
+  .textInput:hover {
     outline: transparent;
   }
   
-  .suggestionsList {
+  .dropdownMenu {
     position: absolute;
     z-index: 3;
     display: flex;
@@ -57,7 +58,7 @@
     border-radius: 10px;
   }
   
-  .suggestionItem {
+  .dropdownOption {
     cursor: pointer;
     color: rgba(16, 24, 40, 0.5);
     padding: 8px 8px 8px 48px;
@@ -66,12 +67,12 @@
     transition: var(--anim);
   }
   
-  .suggestionItem:hover,
-  .suggestionItem:focus {
+  .dropdownOption:hover,
+  .dropdownOption:focus {
     color: var(--main-color);
   }
   
-  .mapIconStyle {
+  .locationIcon {
     width: 18px;
     height: 20px;
     stroke: rgba(16, 24, 40, 0.6);
@@ -83,8 +84,8 @@
     z-index: 5;
   }
   
-  .inputContainer:focus-within .mapIconStyle,
-  .inputContainer:hover .mapIconStyle {
+  .inputContainer:focus-within .locationIcon,
+  .inputContainer:hover .locationIcon {
     stroke: var(--main-color);
   }
   
@@ -106,7 +107,7 @@
     bottom: -24px;
     right: 0px;
     transform: translateY(-50%);
-    display: block;
+    display:block;
     width: 360px;
     height: 1px;
     background-color: rgba(16, 24, 40, 0.1);
@@ -119,7 +120,7 @@
     gap: 10px;
   }
   
-  .selectedEquipment {
+  .equipmentBox {
     width: 102px;
     height: 95px;
     border: 1px solid rgba(16, 24, 40, 0.2);
@@ -134,22 +135,22 @@
     transition: var(--anim);
   }
   
-  .selectedEquipment:hover,
-  .selectedEquipment:focus {
+  .equipmentBox:hover,
+  .equipmentBox:focus {
     border: 1px solid var(--accent-color);
   }
   
-  .filterIcon {
+  .iconStyle {
     width: 32px;
     height: 32px;
   }
   
-  .camperIcon {
+  .iconFilterCamper {
     width: 40px;
     height: 40px;
   }
   
-  .actionButton {
+  .searchButton {
     margin-top: 32px;
     border-radius: 200px;
     padding: 16px 60px;
@@ -165,8 +166,8 @@
     transition: var(--anim);
   }
   
-  .actionButton:active,
-  .actionButton:focus-visible {
+  .searchButton:active,
+  .searchButton:focus-visible {
     background-color: var(--accent-second-color);
   }
   
@@ -178,8 +179,17 @@
     font-size: 12px;
   }
   
-  .checkboxStyle,
-  .radioStyle {
+  .equipmentItem:has(input[type='checkbox']:checked) .equipmentBox,
+  .equipmentItem:has(input[type='radio']:checked) .equipmentBox {
+    border: 2px solid var(--accent-color);
+  }
+  
+  .equipmentLabel {
+    cursor: pointer;
+  }
+  
+  .checkInput,
+  .radio {
     opacity: 0;
     position: absolute;
     width: 0;
@@ -187,5 +197,79 @@
     margin: 0;
     padding: 0;
     border: none;
+  }
+  
+  .filterSection {
+    /* Стили для обертки секции */
+  }
+  
+  .filterTitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--main-color);
+    position: relative;
+  }
+  
+  .filterTitle::before {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    right: 0px;
+    transform: translateY(-50%);
+    display: block;
+    width: 360px;
+    height: 1px;
+    background-color: rgba(16, 24, 40, 0.1);
+  }
+  
+  .filterList {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .filterItem {
+    /* Стили для элементов списка фильтров */
+  }
+  
+  .filterLabel {
+    cursor: pointer;
+  }
+  
+  .filterBoxChosed {
+    width: 102px;
+    height: 95px;
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    padding: 0 17px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--anim);
+  }
+  
+  .filterBoxChosed:hover,
+  .filterBoxChosed:focus {
+    border: 1px solid var(--accent-color);
+  }
+  
+  .radio {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  .iconFilterCamper {
+    width: 40px;
+    height: 40px;
   }
   

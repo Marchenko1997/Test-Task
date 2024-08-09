@@ -9,9 +9,6 @@ Modal.setAppElement('#root');
 const ModalWindow = ({ modalName }) => {
   const { isOpen, modalContent, closeModal } = useModalContext();
 
-  console.log(`Rendering ModalWindow for ${modalName}: isOpen = ${isOpen[modalName]}`);
-  console.log('Modal content:', modalContent[modalName]);
-
   return (
     <Modal
       isOpen={isOpen[modalName]}

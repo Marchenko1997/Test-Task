@@ -3,7 +3,6 @@ import css from './VehicleTable.module.css';
 import vehicleDescr from '../../../../utils/vehicleDescr';
 
 const VehicleTable = ({ camper }) => {
-  // Ensure camper is defined before processing
   if (!camper) {
     return <p>No vehicle information available.</p>;
   }

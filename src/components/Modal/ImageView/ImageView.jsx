@@ -10,7 +10,6 @@ function ImageView({ images, imageIndex = 0 }) {
     setCurrentImage((prevIndex) => {
       const step = direction === 'next' ? 1 : -1;
       const nextIndex = (prevIndex + step + images.length) % images.length;
-      console.log(`Navigated ${direction}: new index = ${nextIndex}`);
       return nextIndex;
     });
   };

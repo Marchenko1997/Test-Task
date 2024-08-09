@@ -1,10 +1,11 @@
 .sectionCatalog {
     display: flex;
     width: 100%;
-    gap: 64px;
+    gap: 94px;
     padding: 100px 64px;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: self-start;
     margin: auto;
-    justify-content: space-around; 
+    justify-content: center;
+   
 }

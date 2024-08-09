@@ -15,7 +15,6 @@ const CamperDetails = ({ camper }) => {
 
   const switchTab = (tabName) => {
     setSelectedTab(tabName);
-    console.log(`Tab switched to: ${tabName}`);
   };
 
   const TabContent = ({ tabName, children }) => {
@@ -54,9 +53,6 @@ const CamperDetails = ({ camper }) => {
                 alt={camper.name}
                 className={css.camperImage}
                 onClick={() => {
-                  console.log(
-                    `Opening imageViewer modal with image index: ${idx}`
-                  );
                   openModal(
                     "images_modal",
                     <ImageView images={camper.gallery} imageIndex={idx} />

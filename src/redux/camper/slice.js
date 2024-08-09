@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { getCampers } from './operations';
+import { createSlice } from "@reduxjs/toolkit";
+import { getCampers } from "./operations";
 
 const adsSlice = createSlice({
-  name: 'ads',
+  name: "ads",
   initialState: {
     campers: [],
     loading: false,
@@ -18,9 +18,10 @@ const adsSlice = createSlice({
         state.loading = false;
         state.campers = action.payload;
       })
+
       .addCase(getCampers.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message; // Сохраните только сериализуемое сообщение об ошибке
+        state.error = action.error.message;
       });
   },
 });

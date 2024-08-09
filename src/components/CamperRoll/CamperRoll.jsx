@@ -3,8 +3,7 @@ import CamperUnit from "../CamperUnit/CamperUnit";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-const CamperRoll = ({ ads = [] }) => {
-  console.log(ads); 
+const CamperRoll = ({ ads = [] }) => { 
   const [activeCard, setActiveCard] = useState(4);
   const loadMoreCards = () => {
     setActiveCard((prevCount) => prevCount + 4);

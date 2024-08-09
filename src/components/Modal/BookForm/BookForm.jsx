@@ -1,6 +1,6 @@
 import css from "./BookForm.module.css";
 import Icon from "../../Icon/Icon";
-import { Formik, Form, useField } from "formik";
+import { Formik, Form, useField, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import DatePicker from "react-datepicker";
 import { useRef } from "react";
@@ -9,18 +9,16 @@ import "react-datepicker/dist/react-datepicker.css";
 
 // Кастомный хук для работы с полями формы
 const CustomField = ({ ...props }) => {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
   return (
     <li className={css.inputGroup}>
       <input {...field} {...props} className={css.inputField} />
-      {meta.touched && meta.error ? (
-        <div className={css.errorMessage}>{meta.error}</div>
-      ) : null}
+      <ErrorMessage name={field.name} component="div" className={css.errorMessage} />
     </li>
   );
 };
 
-// Схема валидации для формы
+
 const bookingFormSchema = Yup.object({
   name: Yup.string()
     .min(3, "Too short!")
@@ -43,7 +41,7 @@ const Bookform = () => {
 
   const datePickerRef = useRef(null);
 
-  // Обработчик отправки формы
+  
   const handleSubmit = (values, { resetForm }) => {
     toast.success("Your data was successfully sent. Our manager will contact you within 24 hours.");
     resetForm();
@@ -85,6 +83,7 @@ const Bookform = () => {
               >
                 <Icon className={css.calendarIcon} nameIcon="calendar" />
               </button>
+              <ErrorMessage name="bookingDate" component="div" className={css.errorMessage} />
             </li>
             <CustomField
               as="textarea"

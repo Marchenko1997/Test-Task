@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import {adsReducer} from './camper/slice'; 
+import { filterReducer } from './filter/slice';
 
 // Конфигурация persist для сохранения состояния избранных элементов
 const favoritePersistConfig = {
@@ -27,6 +28,7 @@ const persistedFavoritesReducer = persistReducer(favoritePersistConfig, favorite
 export const store = configureStore({
   reducer: {
     favorites: persistedFavoritesReducer, 
+    filter: filterReducer,
     ads: adsReducer,
   },
   middleware: (getDefaultMiddleware) =>
