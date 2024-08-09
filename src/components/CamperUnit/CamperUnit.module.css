@@ -111,7 +111,7 @@
   overflow: hidden;
   font-size: 16px;
   line-height: 24px;
-  color: var(--second-color);
+  color: var(--accent-second-color);
 }
 
 .showMore {

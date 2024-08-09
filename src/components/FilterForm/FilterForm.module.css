@@ -78,7 +78,7 @@
     stroke: rgba(16, 24, 40, 0.6);
     fill: none;
     position: absolute;
-    top: 18px;
+    top: 29px;
     left: 18px;
     transition: var(--anim);
     z-index: 5;
@@ -151,7 +151,7 @@
   }
   
   .searchButton {
-    margin-top: 32px;
+    margin-top: 16px;
     border-radius: 200px;
     padding: 16px 60px;
     width: 173px;
