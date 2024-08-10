@@ -74,7 +74,7 @@ const Bookform = () => {
                 selected={values.bookingDate}
                 onChange={(date) => setFieldValue("bookingDate", date)}
                 placeholderText="Booking date"
-                className={css.inputField}
+                className={`${css.inputField} ${css.datePicker}`} 
               />
               <button
                 type="button"

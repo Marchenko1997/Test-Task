@@ -28,6 +28,10 @@ const CamperUnit = ({ camper }) => {
 
   const camperPros = createCamperAdv(camper);
 
+  const formatPrice = (price) => {
+    return price.toFixed(2).replace('.', ',');
+  };
+
   return (
     <>
       <img src={camper.gallery[0]} alt={camper.name} className={css.camperImg} />
@@ -35,7 +39,7 @@ const CamperUnit = ({ camper }) => {
         <div className={css.title}>
           <h3>{camper.name}</h3>
           <div className={css.addFavContainer}>
-            <span>&#8364;{camper.price.toFixed(2)}</span>
+          <span>&#8364;{formatPrice(camper.price)}</span>
             <button onClick={handleToggleFav} className={css.addToFavorite}>
               <Icon nameIcon="heart" className={isFavorite ? css.iconHeartPressed : css.iconHeart} />
             </button>

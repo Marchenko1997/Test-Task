@@ -63,6 +63,9 @@
 .iconHeart {
   width: 24px;
   height: 24px;
+  fill: var(--main-white);
+  stroke: var(--main-color);
+  transition: var(--anim);
 }
 
 .iconHeartPressed {
@@ -128,7 +131,7 @@
 .showMore:hover,
 .showMore:focus,
 .showMore:active {
-  background-color: var(--accent-second-color);
+  background-color: var(--accent-fourth-color);
 }
 
 .camperAdv {

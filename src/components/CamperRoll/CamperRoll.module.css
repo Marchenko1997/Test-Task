@@ -40,8 +40,9 @@
   transition: var(--anim);
 }
 
-.loadMore:active,
-.loadMore:focus,
-.loadMore:hover {
+.loadMoreButton:active,
+.loadMoreButton:focus,
+.loadMoreButton:hover {
   border-color: var(--accent-color);
+  background-color: var(--accent-fourth-color);
 }

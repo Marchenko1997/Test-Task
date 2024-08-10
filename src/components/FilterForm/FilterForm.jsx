@@ -75,8 +75,8 @@ const FilterForm = () => {
 
   const validationSchema = Yup.object().shape({
     location: Yup.string()
-      .min(3, 'Надто коротка назва міста!')
-      .max(58, 'Надто довга назва міста!'),
+      .min(3, 'Too short city name!!')
+      .max(58, 'Too long city name!'),
   });
 
   const handleSearch = (values, { resetForm }) => {

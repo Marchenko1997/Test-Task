@@ -167,8 +167,10 @@
   }
   
   .searchButton:active,
-  .searchButton:focus-visible {
-    background-color: var(--accent-second-color);
+  .searchButton:focus-visible,
+  .searchButton:hover {
+    background-color: var(--accent-fourth-color);
+    
   }
   
   .errorMessage {
