@@ -51,7 +51,7 @@ The application is structured into three primary sections:
     <a href="https://mhnpd.github.io/react-loader-spinner/" target="_blank" rel="noreferrer">react-loader-spinner</a>
 
   - Styling: Custom
-    <a href="https://www.w3schools.com/css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/></a>
+    <a href="https://www.w3schools.com/css" target="_blank" rel="noreferrer"></a>
     and
     <a href="https://github.com/sindresorhus/modern-normalize" target="_blank" rel="noreferrer">modern-normalize</a>
 
