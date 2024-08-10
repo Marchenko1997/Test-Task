@@ -180,7 +180,6 @@
 }
 
 .tabContent {
-  width: 962px;
   display: flex;
   flex-direction: row;
   gap: 24px;

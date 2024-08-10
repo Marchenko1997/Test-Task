@@ -37,7 +37,7 @@
   
   .inputField {
     border-radius: 10px;
-    min-width: 238px;
+    min-width: 380px;
     width: 100%;
     height: 56px;
     border: none;
@@ -45,7 +45,7 @@
     background-color: var(--background-inputs);
     color: var(--main-color);
     display: block;
-    width: 400px;
+    
   }
   
   .inputField::placeholder {
@@ -67,7 +67,7 @@
   
   .calendarButton {
     position: absolute;
-    right: 58px;
+    right: 13px;
     top: 50%;
     transform: translateY(-50%);
     padding: 4px;

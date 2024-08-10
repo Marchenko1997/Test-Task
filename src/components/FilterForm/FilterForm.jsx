@@ -35,6 +35,7 @@ const FilterForm = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
+
   useEffect(() => {
 
     const validAdverts = allAdverts.filter(ad => ad && ad.location);
@@ -46,6 +47,8 @@ const FilterForm = () => {
     setFieldValue('location', city);
     setShowDropdown(false);
   };
+
+
 
   const handleInputChange = (value, setFieldValue) => {
     setFieldValue('location', value);
@@ -185,15 +188,15 @@ const FilterForm = () => {
                 },
                 { name: 'alcove', label: 'Alcove', iconName: 'camperBig' },
               ].map(item => (
-                <li className={css.filterItem} key={item.name}>
-                  <label className={css.filterLabel}>
+                <li className={css.equipmentItem} key={item.name}>
+                  <label className={css.equipmentLabel}>
                     <Field
                       type="radio"
                       name="form"
                       value={item.name}
                       className={css.radio}
                     />
-                    <div className={css.filterBoxChosed}>
+                    <div className={css.equipmentBox}>
                       <Icon
                         nameIcon={item.iconName}
                         className={css.iconFilterCamper}

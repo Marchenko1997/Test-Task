@@ -63,7 +63,7 @@
   .favoritesImage {
     width: 760px;
       height: 760px;
-    background-image: url('../../assets/camper.png');
+    background-image: url('../../assets//favoriteCamper.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 40%;

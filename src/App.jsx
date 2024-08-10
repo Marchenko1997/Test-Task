@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import ModalsNav from './components/Modal/ModalsNav/ModalsNav';
 

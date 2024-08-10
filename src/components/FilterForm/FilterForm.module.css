@@ -202,9 +202,7 @@
     border: none;
   }
   
-  .filterSection {
-    /* Стили для обертки секции */
-  }
+  
   
   .filterTitle {
     font-weight: 600;
@@ -233,32 +231,10 @@
     gap: 10px;
   }
   
-  .filterItem {
-    /* Стили для элементов списка фильтров */
-  }
+
   
   .filterLabel {
     cursor: pointer;
-  }
-  
-  .filterBoxChosed {
-    width: 102px;
-    height: 95px;
-    border: 1px solid rgba(16, 24, 40, 0.2);
-    border-radius: 10px;
-    padding: 0 17px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: var(--anim);
-  }
-  
-  .filterBoxChosed:hover,
-  .filterBoxChosed:focus {
-    border: 1px solid var(--accent-color);
   }
   
   .radio {
