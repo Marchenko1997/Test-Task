@@ -1,0 +1,44 @@
+.errorMessage {
+    position: relative;
+    min-width: 320px;
+    width: 1140px;
+    width: 100%;
+    min-height: 620px;
+    height: 100vh;
+    padding: 100px 64px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 45px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 768px 640px;
+    background-position: 50% 40%;
+  }
+  
+  .errorText {
+    margin-top: 40px;
+  }
+  
+  .backHome {
+    position: absolute;
+    top: 32px;
+    right: 100px;
+    margin-top: 20px;
+    display: inline;
+    border: 2px solid var(--accent-color);
+    background-color: var(--main-white);
+    padding: 10px 32px;
+    border-radius: 200px;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--accent-second-color);
+    transition: var(--anim);
+  }
+  
+  .backHome:active,
+  .backHome:focus-visible,
+  .backHome:hover {
+    color: var(--main-color);
+    background-color: var(--accent-color);
+  }

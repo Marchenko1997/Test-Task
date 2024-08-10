@@ -1,20 +1,17 @@
-
-import { Outlet } from 'react-router-dom';
-import NavHeader from './components/NavHeader/NavHeader';
-import { Suspense } from 'react';
-import { Toaster } from 'react-hot-toast';
-
-
+import { Outlet } from "react-router-dom";
+import NavHeader from "./components/NavHeader/NavHeader";
+import { Suspense } from "react";
+import { Toaster } from "react-hot-toast";
+import Loader from "./components/Loader/Loader";
 
 const Layout = () => {
   return (
     <div>
       <NavHeader />
-      <Suspense fallback={<div>Loading...</div>}>
-      
-      <main>
-        <Outlet />
-      </main>
+      <Suspense fallback={<Loader />}>
+        <main>
+          <Outlet />
+        </main>
       </Suspense>
       <Toaster
         position="top-center"
@@ -23,15 +20,15 @@ const Layout = () => {
           success: {
             duration: 3000,
             style: {
-              background: '#169315',
-              color: '#fff',
+              background: "#169315",
+              color: "#fff",
             },
           },
           error: {
             duration: 3000,
             style: {
-              background: '#ea2c04',
-              color: '#fff',
+              background: "#ea2c04",
+              color: "#fff",
             },
           },
         }}
@@ -40,7 +37,7 @@ const Layout = () => {
         }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

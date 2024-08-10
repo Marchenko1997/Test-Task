@@ -1,0 +1,48 @@
+.container {
+    position: relative;
+    min-width: 320px;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 45px;
+    background-repeat: no-repeat;
+    background-size: 375px 340px;
+    background-position: 50% 50%;
+    width: 1440px;
+    background-size: auto;
+    background-image: url(../../assets/oopps.png);
+    padding: 100px 64px;
+  }
+  
+  .errorMessage {
+    margin-top: 80px;
+    font-size: 62px;
+    font-weight: 700;
+  }
+  
+  .backHome {
+    position: absolute;
+    top: 32px;
+    right: 100px;
+    margin-top: 20px;
+    display: inline;
+    border: 2px solid var(--accent-color);
+    background-color: var(--main-white);
+    padding: 10px 32px;
+    border-radius: 200px;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--accent-second-color);
+    transition: var(--anim);
+  }
+  
+  .backHome:focus-visible,
+  .backHome:active,
+  .backHome:hover {
+    color: var(--main-color);
+    background-color: var(--accent-color);
+  }
+  
