@@ -13,7 +13,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 function App() {
   return (
     <>
-    <Router>
+    <Router basename="/Test-Task">
       <Routes>
         <Route path="/" element={<Layout />} >
         <Route index element={<HomePage />} />
