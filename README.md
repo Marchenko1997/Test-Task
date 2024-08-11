@@ -56,8 +56,8 @@ The application is structured into three primary sections:
     <a href="https://github.com/sindresorhus/modern-normalize" target="_blank" rel="noreferrer">modern-normalize</a>
 
   **:🔸Utilites \***
-- Netlify:
-  <a href="https://app.netlify.com" target="_blank" rel="noreferrer"></a>
+- GitHub Pages:
+  <a href="https://pages.github.com/" target="_blank" rel="noreferrer"></a>
  - Figma: 
 <a href="https://www.figma.com/" target="_blank" rel="noreferrer"></a>
 
