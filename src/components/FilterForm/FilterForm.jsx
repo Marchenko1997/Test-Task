@@ -6,14 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './FilterForm.module.css';
 import Icon from '../Icon/Icon';
 import { selectFilter } from '../../redux/filter/selectors';
-import {
-  clearFilters,
-  setDetails,
-  setForm,
-  setLocation,
-} from '../../redux/filter/slice';
+import { clearFilters, setDetails, setForm, setLocation } from '../../redux/filter/slice';
 import { selectCampers } from '../../redux/camper/selectors';
-
 
 const getUniqueCities = (ads) => {
   return [...new Set(ads.map(ad => {
@@ -25,7 +19,6 @@ const getUniqueCities = (ads) => {
   }))];
 };
 
-
 const FilterForm = () => {
   const allAdverts = useSelector(selectCampers);
   const dispatch = useDispatch();
@@ -35,9 +28,7 @@ const FilterForm = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
-
   useEffect(() => {
-
     const validAdverts = allAdverts.filter(ad => ad && ad.location);
     const uniqueCities = getUniqueCities(validAdverts);
     setFilteredCities(uniqueCities);
@@ -47,8 +38,6 @@ const FilterForm = () => {
     setFieldValue('location', city);
     setShowDropdown(false);
   };
-
-
 
   const handleInputChange = (value, setFieldValue) => {
     setFieldValue('location', value);
@@ -77,9 +66,7 @@ const FilterForm = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    location: Yup.string()
-      .min(3, 'Too short city name!!')
-      .max(58, 'Too long city name!'),
+    location: Yup.string().min(3, 'Too short city name!!').max(58, 'Too long city name!')
   });
 
   const handleSearch = (values, { resetForm }) => {
@@ -120,12 +107,6 @@ const FilterForm = () => {
               <ErrorMessage className={css.errorMessage} name="location" component="span" />
               {showDropdown && (
                 <ul className={css.dropdownMenu}>
-                  <li
-                    className={css.dropdownOption}
-                    onClick={() => handleCitySelect('All Cities', setFieldValue)}
-                  >
-                    All Cities
-                  </li>
                   {filteredCities.map(city => (
                     <li
                       className={css.dropdownOption}
@@ -159,7 +140,7 @@ const FilterForm = () => {
                       <Field
                         type="checkbox"
                         name={`details.${item.name}`}
-                        checked={values.details[item.name]}
+                        checked={values.details[item.name] || false}
                         className={css.checkInput}
                         onChange={({ target: { checked } }) =>
                           setFieldValue(`details.${item.name}`, checked)
@@ -194,7 +175,9 @@ const FilterForm = () => {
                       type="radio"
                       name="form"
                       value={item.name}
+                      checked={values.form === item.name}
                       className={css.radio}
+                      onChange={() => setFieldValue('form', item.name)}
                     />
                     <div className={css.equipmentBox}>
                       <Icon

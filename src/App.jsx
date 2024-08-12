@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import ModalsNav from "./components/Modal/ModalsNav/ModalsNav";
 
@@ -11,7 +11,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 function App() {
   return (
     <>
-      <Router basename="/Test-Task">
+      <Router >
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
