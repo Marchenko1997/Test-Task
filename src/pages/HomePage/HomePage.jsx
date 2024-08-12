@@ -3,6 +3,7 @@ import HomeTitle from "../../components/HomeTitle/HomeTitle";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
+  console.log("Loading HomePage");
   return (
     <div className={css.wrapperHome}>
       <HomeTitle>Camper Service</HomeTitle>

@@ -5,6 +5,7 @@ import css from "./NotFoundPage.module.css";
 
 
 const NotFoundPage = () => {
+    console.log("Loading NotFoundPage");
   return (
     <>
       <DocumentTitle>Not found</DocumentTitle>

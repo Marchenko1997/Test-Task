@@ -9,9 +9,10 @@ const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 function App() {
+  console.log("Rendering App component");
   return (
     <>
-      <Router >
+      <Router  >
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />

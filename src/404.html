@@ -9,14 +9,12 @@
       // Single Page Apps for GitHub Pages
       // MIT License
       // Adapted from https://github.com/rafgraph/spa-github-pages
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment,
-      // e.g. https://marchenko1997.github.io/Test-Task/one/two?a=b&c=d#qwe, becomes
+      // This script handles the redirection for GitHub Pages SPA
+      // It converts the path and query string into a format that keeps SPA routing working after refreshes on GitHub Pages
+      // For example: https://marchenko1997.github.io/Test-Task/one/two?a=b&c=d#qwe becomes
       // https://marchenko1997.github.io/Test-Task/?/one/two&a=b~and~c=d#qwe
 
-      // If you are not using a custom domain, and your project is in a subdirectory,
-      // set pathSegmentsToKeep to 1.
+      // Set pathSegmentsToKeep to 1 if your project is in a subdirectory and not using a custom domain
       var pathSegmentsToKeep = 1;
 
       var l = window.location;
