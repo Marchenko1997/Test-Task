@@ -2,11 +2,13 @@ import { lazy } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import ModalsNav from "./components/Modal/ModalsNav/ModalsNav";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+// const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+
 
 function App() {
   console.log("Rendering App component");
